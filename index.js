@@ -138,7 +138,7 @@ let heroku = {
   api_key: core.getInput("heroku_api_key"),
   email: core.getInput("heroku_email"),
   app_name: core.getInput("heroku_app_name"),
-  buildpacks: core.getInput("buildpack") === "" ? [] : core.getInput("buildpack").split("\n"),
+  buildpacks: core.getInput("buildpacks") === "" ? [] : core.getInput("buildpacks").split("\n"),
   branch: core.getInput("branch"),
   dontuseforce: core.getInput("dontuseforce") === "false" ? false : true,
   dontautocreate: core.getInput("dontautocreate") === "false" ? false : true,

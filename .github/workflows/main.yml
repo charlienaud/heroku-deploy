@@ -44,7 +44,7 @@ jobs:
           heroku_app_name: "akhileshns-hd-test-2"
           heroku_email: "nsakhilesh02@gmail.com"
           appdir: "tests/test-2"
-          buildpack: "https://github.com/heroku/heroku-buildpack-static.git"
+          buildpacks: "https://github.com/heroku/heroku-buildpack-static.git"
           healthcheck: "https://akhileshns-hd-test-2.herokuapp.com/"
           delay: 5
       - run: npm run test-action https://akhileshns-hd-test-2.herokuapp.com/
