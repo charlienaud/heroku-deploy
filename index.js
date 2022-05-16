@@ -30,14 +30,16 @@ const addRemote = ({ app_name, dontautocreate, buildpacks, region, team, stack }
         (stack ? " --stack " + stack : "") +
         (team ? " --team " + team : "")
     );
+  }
 
-    for (let key in buildpacks) {
-      console.log("heroku buildpacks:add " + buildpacks[key] + " --app " + app_name);
-      execSync("heroku buildpacks:add " +
-        buildpacks[key] +
-        " --app " + app_name
-      );
-    }
+  console.log('Clearing existing buildpacks');
+  execSync("heroku buildpacks:clear");
+  for (let key in buildpacks) {
+    console.log("heroku buildpacks:add " + buildpacks[key] + " --app " + app_name);
+    execSync("heroku buildpacks:add " +
+      buildpacks[key] +
+      " --app " + app_name
+    );
   }
 };
 
