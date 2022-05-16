@@ -32,6 +32,7 @@ const addRemote = ({ app_name, dontautocreate, buildpacks, region, team, stack }
     );
 
     for (let key in buildpacks) {
+      console.log("heroku buildpacks:add " + buildpacks[key] + " --app " + app_name);
       execSync("heroku buildpacks:add " +
         buildpacks[key] +
         " --app " + app_name
